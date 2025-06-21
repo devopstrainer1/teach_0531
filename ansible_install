@@ -1,12 +1,19 @@
 ###ansibel installation and key generation and copy steps
 
 
-####install 
+####install on rhel
 
    6  dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm -y
     7  dnf config-manager --set-enabled epel
     8  dnf install -y ansible
     9  ansible --version
+
+### install on ubuntu
+
+apt update
+apt install -y software-properties-common
+add-apt-repository --yes --update ppa:ansible/ansible
+apt install -y ansible
 
 
 ### key generation and copying
