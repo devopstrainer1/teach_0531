@@ -1,0 +1,37 @@
+###ansibel installation and key generation and copy steps
+
+
+####install 
+
+   6  dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm -y
+    7  dnf config-manager --set-enabled epel
+    8  dnf install -y ansible
+    9  ansible --version
+
+
+### key generation and copying
+
+    1  ssh-keygen
+    2  exit
+    3  clear
+    4  cd ~/.ssh
+    5  ls -lrt
+    6  ssh-copy-id -i amit@34.134.237.167( slave node IP address)
+
+
+### ad-hoc commands
+
+   22  ansible -m ping webservers
+   23  ansible -m command -a uptime webservers
+   24  ansible -m command -a "df -kh /tmp" webservers
+   25  ansible -m yum -a "name=httpd state=present" webservers
+   26  ansible -m yum -a "name=httpd state=present" webservers --become
+   27  ansible -m yum -a "name=httpd state=absent" webservers --become
+   28  ansible -m yum -a "name=httpd state=present" webservers --become
+   29  ansibel -m service -a "name=httpd state=started" webservers --become
+   30  ansible -m service -a "name=httpd state=started" webservers --become
+   31  ansible -m service -a "name=httpd state=stopped" webservers --become
+   32  cd /tmp
+   33  sudo vi a.txt
+   34  ansible -m copy -a "src=/tmp/a.txt dest=/tmp/" webservers
+   35  ansible -m copy -a "src=/tmp/a.txt dest=/tmp/" webservers -vvv
