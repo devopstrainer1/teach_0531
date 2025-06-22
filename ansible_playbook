@@ -1,0 +1,83 @@
+---
+- hosts: webservers
+  gather_facts: no
+  become: true
+  become_user: root
+  tasks:
+  - name: installing some package
+    yum:
+     name: httpdsgsdhsgdhsh
+     state: present
+    ignore_errors: true
+    tags:
+     - amit
+     - edureka
+  - name: start the service
+    service:
+     name: httpd
+     state: started
+    register: service_execution
+    tags:
+     - service
+     - edureka
+  - name: show status
+    debug:
+     var: service_execution
+
+
+-----------------
+
+[root@master tmp]# cat b.yml 
+---
+- hosts: webservers
+  become: true
+  become_user: root
+  tasks:
+  - name: copy the script
+    copy: src=/tmp/test.sh dest=/tmp/
+  - name: execute the script
+    command: sh /tmp/test.sh
+[root@master tmp]# cat c.yml 
+---
+- hosts: webservers
+  become: true
+  become_user: root
+  vars:
+   src_path: /tmp
+   dest_path: /var/www/html
+  tasks:
+  - name: install package
+    yum: name=httpd state=present
+  - name: start the service
+    service: name=httpd state=started
+  - name: deploy the file
+    copy: src={{src_path}}/index.html dest={{dest_path}}
+    notify: restart httpd
+  handlers:
+  - name: restart httpd
+    service: name=httpd state=restarted
+[root@master tmp]# cat d.yml 
+---
+- hosts: webservers
+  become: true
+  become_user: root
+  tasks:
+  - name: replacing the content
+    replace: dest=/tmp/a.txt regexp='friday' replace=''
+[root@master tmp]# cat e.yml 
+---
+- hosts: webservers
+  become: true
+  become_user: root
+  tasks:
+  - name: delete a line
+    lineinfile: dest=/tmp/a.txt line='deepak' state='present' insertafter='monday'
+
+[root@master tmp]# cat g.yml 
+---
+- hosts: webservers
+  become: true
+  become_user: root
+  roles:
+  - geerlingguy.java
+  - geerlingguy.jenkins
