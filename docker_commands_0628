@@ -1,0 +1,143 @@
+sudo dnf -y install dnf-plugins-core
+    7  sudo dnf config-manager --add-repo https://download.docker.com/linux/rhel/docker-ce.repo
+    8  sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+    9  systemctl start docker
+   10  docker --version
+   11  history
+   12  cd /var/lib/docker/
+   13  ls -lrt
+   14  df -hT .
+   15  clear
+   16  docker run nginx
+   17  clear
+   18  docker images
+   19  docker ps -a
+   20  docker run --name abhishek nginx
+   21  clear
+   22  docker images
+   23  docker ps -a
+   24  clear
+   25  docker run -it --name amit ubuntu
+   26  docker ps -a
+   27  docker run -it --name amit1 ubuntu
+   28  clear
+   29  docker ps -a
+   30  clear
+   31  docker run -itd --name jitendra nginx
+   32  docker ps -a
+   33  docker inspect 52e87485d806
+   34  docker ps -a
+   35  docker inspect 02fd540a7c02
+   36  docker ps -a
+   37  docker inspect 6c81264a9f06
+   38  docker run -itd tomcat
+   39  docker ps -a
+   40  docker inspect 1a7aee06a3b0
+   41  ip a
+   42  clear
+   43  clear
+   44  docker ps -a
+   45  docker ps -a
+   46  clear
+   47  docker ps -a
+   48  docker ps
+   49  docker start 02fd540a7c02
+   50  docker ps
+   51  docker stop 52e87485d806
+   52  docker restart 52e87485d806
+   53  docker ps
+   54  clear
+   55  docker ps -a
+   56  docker ps -a -q
+   57  docker stop $(docker ps -a -q)
+   58  docker ps -a
+   59  docker start $(docker ps -a -q)
+   60  docker ps -a
+   61  docker rm 1a7aee06a3b0
+   62  docker stop 1a7aee06a3b0
+   63  docker rm 1a7aee06a3b0
+   64  clear
+   65  docker info
+   66  docker stats
+   67  clear
+   68  docker ps -a
+   69  docker exec -it 52e87485d806 /bin/sh
+   70  docker ps -a
+   71  docker logs 52e87485d806
+   72  docker logs -f 52e87485d806
+   73  clear
+   74  docker ps -a
+   75  clear
+   76  docker run -itd --name port -P nginx
+   77  docker ps
+   78  curl ifconfig.co
+   79  docker run -itd --name port1 -P nginx
+   80  docker ps
+   81  docker restart 7db724048c36
+   82  docker ps
+   83  clear
+   84  docker run -itd --name bind -p 81:80 nginx
+   85  docker ps -a
+   86  docker restart d5558f4d909e
+   87  docker ps -a
+   88  docker run -itd --name bind -p 80:80 nginx
+   89  docker run -itd --name bind1 -p 80:80 nginx
+   90  docker ps -a
+   91  clear
+   92  docker ps -a
+   93  systemctl docker restart
+   94  systemctl restart docker
+   95  docker ps -a
+   96  docker start $(docker ps -a -q)
+   97  docker ps -a
+   98  docker run -itd -P --restart always nginx
+   99  docker ps -a
+  100  systemctl restart docker
+  101  docker ps -a
+  102  clear
+  103  docker ps -a
+  104  docker start $(docker ps -a -q)
+  105  clear
+  106  docker ps -a
+  107  docker stop 7c3b4236a93f
+  108  docker kill ae4e051866eb
+  109  docker ps -a
+  110  docker stop -t 20 02fd540a7c02
+  111  docker ps -a
+  112  clear
+  113  docker container prune
+  114  docker ps -a
+  115  docker top 7cad2f63e4e6
+  116  clear
+  117  docker ps -a
+  118  docker rename cff6dc49e847 bimlesh
+  119  docker ps -a
+  120  clear
+  121  docker ps -a
+  122  cd /tmp
+  123  ls -lrt
+  124  vi a.txt
+  125  ls -lrt
+  126  clear
+  127  docker ps -a
+  128  docker cp a.txt cff6dc49e847:/tmp
+  129  docker exec -it cff6dc49e847 /bin/bash
+  130  docker clear
+  131  docker ps -a
+  132  docker cp cff6dc49e847:/tmp/b.txt .
+  133  ls -lrt
+  134  docker cp cff6dc49e847:/tmp/a.txt 77ab5030eb93:/tmp
+  135  docker volume create vol1
+  136  docker inspect vol1
+  137  docker run -itd -v vol1/tmp --name share nginx
+  138  docker exec -it share /bin/bash
+  139  docker run -itd -v vol1:/tmp --name share nginx
+  140  docker run -itd -v vol1:/tmp --name share1 nginx
+  141  cat a.txrt
+  142  touch a.txt
+  143  touch b.txt
+  144  pwd
+  145  docker exec -it share1 /bin/bash
+  146  cd /var/lib/docker/volumes/vol1/_data
+  147  ls -lrt
+  148  docker run -itd -v vol1:/tmp --name share2 nginx
