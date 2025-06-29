@@ -1,0 +1,125 @@
+ dnf -y install dnf-plugins-core
+    4  sudo dnf config-manager --add-repo https://download.docker.com/linux/rhel/docker-ce.repo
+    5  sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+    6  systemctl status docker
+    7  systemctl start docker
+    8  systemctl status docker
+    9  clear
+   10  docker run -it --name abhishek ubuntu
+   11  clear
+   12  docker ps
+   13  docker commit a8659c32426b sridhar
+   14  docker images
+   15  docker run -it --name amit sridhar
+   16  clear
+   17  docker images
+   18  docker push devopstrainer1/0629:tagname
+   19  docker tag sridhar:latest devopstrainer1/0629:sridhar
+   20  docker images
+   21  docker push devopstrainer1/0629:sridhar
+   22  docker login
+   23  docker push devopstrainer1/0629:sridhar
+   24  cd /tmp
+   25  docker images
+   26  docker save sridhar -o edureka.tar
+   27  ls -lrt
+   28  docker rmi sridhar
+   29  docker images
+   30  docker load < edureka.tar 
+   31  docker images
+   32  clear
+   33  ls -lrt
+   34  ls 
+   35  ls -rt
+   36  ls -lkrt
+   37  clear
+   38  docker ps -a
+   39  docker export 0296827b58ff > priya.tar
+   40  ls -lrt
+   41  docker import priya.tar priya
+   42  docker images
+   43  clear
+   44  docker images
+   45  docker inspect priya
+   46  clear
+   47  docker images
+   48  docker pull nginx
+   49  docker pull debian
+   50  docker pull tomcat
+   51  docker images
+   52  docker ps -a
+   53  docker image prune
+   54  docker images
+   55  docker image prune -a
+   56  docker images
+   57  vi Dockerfile
+   58  docker build -t mayank .
+   59  docker images
+   60  docker run -itd -p 85:80 mayank
+   61  curl ifconfig.co
+   62  vi raj
+   63  vi index.html
+   64  docker build -t bimlesh -f raj .
+   65  docker images
+   66  docker run -itd -p 90:80 bimlesh
+   67  docker ps -a
+   68  docker logs a9767bafac42
+   69  docker exec -it a9767bafac42 /bin/bash
+   70  ls -lrt
+   71  vi raj
+   72  docker build -t bimlesh1 -f raj .
+   73  docker run -itd -p 91:80 bimlesh1
+   74  docker ps -a
+   75  docker exec -it b53dcffaaa9a /bin/bash
+   76  curl ifconfig.co
+   77  vi raj
+   78  docker build -t edureka -f raj .
+   79  docker run -itd -p 87:80 edureka
+   80  docker images
+   81  docker ps -a
+   82  docker exec -it 29a34e8fe562 /bin/bash
+   83  docker images
+   84  docker ps -a
+   85  docker run -itd -P edureka
+   86  docker ps -a
+   87  cat raj
+   88  ip a
+   89  clear
+   90  docker network ls
+   91  docker inspect bridge
+   92  docker network ls
+   93  docker run -itd --name aman --net host -P nginx
+   94  docker ps -a
+   95  curl ifconfig.co
+   96  docker run -itd --name aman1 --net host -P nginx
+   97  docker ps -a
+   98  docker log dbd794b91cd5
+   99  docker logs dbd794b91cd5
+  100  cler
+  101  clear
+  102  docker network ls
+  103  docker run -itd --net none -P nginx
+  104  docker ps -a
+  105  docker inspect d54426a339a9
+  106  clear
+  107  docker network ls
+  108  docker network create renuka
+  109  docker network ls
+  110  ip a
+  111  docker network ls
+  112  docker run -itd -P --net renuka nginx
+  113  docker ps -a
+  114  docker inspect f5a7fd873449
+  115  docker network
+  116  clear
+  117  docker inspect f5a7fd873449
+  118  docker ps -a
+  119  docker inspect f5a7fd873449
+  120  docker network ls
+  121  docker network connect f5a7fd873449 bridge
+  122  docker network connect bridge f5a7fd873449
+  123  docker inspect f5a7fd873449
+  124  docker network disconnect renuka renuka
+  125  docker network disconnect renuka f5a7fd873449
+  126  docker inspect f5a7fd873449
+  127  clear
