@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: amit7
+  namespace: bimlesh
+  labels:
+    name: edureka
+    nameo1: abhishek
+spec:
+  containers:
+    - name: edureka
+      image: httpd
+      resources:
+        requests:
+          memory: "5120Mi"
+          cpu: "250m"
