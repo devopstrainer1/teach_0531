@@ -1,0 +1,89 @@
+kubectl get nodes -o wide
+  505  clear
+  506  kubectl get pods
+  507  kubectl
+  508  kubectl get containers
+  509  kubectl get
+  510  kubectl run pod1 --image nginx
+  511  kubectl get pods
+  512  kubectl describe pod pod1
+  513  kubectl get pods
+  514  kubectl get pods -o wide
+  515  kubectl exec -it pod1 -- bash
+  516  kubectl get pods -o wide
+  517  kubectl edit pod pod1
+  518  kubectl get pods -o wide
+  519  kubectl describe pod pod1
+  520  kubectl get nodes -o wide
+  521  kubectl get pods
+  522  kubectl delete pod pod1
+  523  kubectl get pods
+  524  kubectl get all
+  525  kubectl run pod1 --image nginx --dry-run=client -o yaml
+  526  kubectl run pod1 --image nginx
+  527  kubectl get pods -o wide
+  528  kubectl get nodes
+  529  cd /tmp
+  530  vi a.yml
+  531  kubectl apply -f a.yml 
+  532  kubectl get pods
+  533  vi a.yml 
+  534  kubectl apply -f a.yml 
+  535  vi a.yml 
+  536  kubectl apply -f a.yml 
+  537  kubectl get pods
+  538  kubectl describe pod amit1
+  539  kubectl logs amit1
+  540  clear
+  541  kubectl logs amit
+  542  vi a.yml 
+  543  kubectl logs -c raj amit
+  544  vi a.yml
+  545  kubectl apply -f a.yml 
+  546  kubectl get pods
+  547  vi a.yml
+  548  kubectl apply -f a.yml 
+  549  kubectl get pods
+  550  kubectl get pods -o wide
+  551  kubectl get pods --show-labels
+  552  kubectl run pod1 --image nginx
+  553  kubectl run pod2 --image nginx
+  554  kubectl get pods --show-labels
+  555  vi a.yml
+  556  kubectl apply -f a.yml 
+  557  kubectl get pods --show-labels
+  558  kubectl get pods -l name=edureka
+  559  kubectl get namespaces
+  560  kubectl get pods
+  561  kubectl get pods --namespace kube-system
+  562  clear
+  563  kubectl get pods --all-namespaces
+  564  cler
+  565  clear
+  566  kubectl create namespace bimlesh
+  567  kubectl get namespace
+  568  vi a.yml 
+  569  kubectl apply -f a.yml 
+  570  kubectl get pods
+  571  kubectl get pods --namespace bimlesh
+  572  kubectl config set-context --current --namespace=bimlesh
+  573  kubectl get pods
+  574  vi a.yml 
+  575  kubectl apply -f a.yml 
+  576  vi a.yml 
+  577  kubectl apply -f a.yml 
+  578  kubectl get pods
+  579  kubectl describe pod amit6
+  580  kubectl describe pod amit5
+  581  vi a.yml 
+  582  kubectl apply -f a.yml 
+  583  kubectl get pods
+  584  kubectl describe pod amit7
+  585  kubectl get pods
+  586  kubectl delete pod amit7
+  587  vi a.yml 
+  588  kubectl apply -f a.yml 
+  589  kubectl describe pod amit7
+  590  clear
+  591  kubectl get pods
+  592  kubectl delete pod amit5
