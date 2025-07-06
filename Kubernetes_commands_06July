@@ -1,0 +1,67 @@
+ kubectl apply -f a.yml 
+  509  kubectl get pods
+  510  kubectl get deployments
+  511  kubectl get all
+  512  kubectl delete pod abc123-f5cc4759f-jv4fs
+  513  kubectl get all
+  514  kubectl scale deployment abc123 --replicas=5
+  515  kubectl get all
+  516  kubectl describe deployment abc123
+  517  kubectl get pods -o wide
+  518  kubectl set image deployment abc123 amit=httpd
+  519  kubectl get all
+  520  kubectl describe deployment abc123
+  521  clear
+  522  kubectl rollout history deployment abc123
+  523  kubectl rollout undo deployment abc123 --to-revision=1
+  524  kubectl get all
+  525  kubectl describe deployment abc123
+  526  kubectl rollout history deployment abc123
+  527  kubectl get all
+  528  cat a.yml 
+  529  kubectl get pods --show-labels
+  530  kubectl describe pod abc123-f5cc4759f-9c55j
+  531  clear
+  532  kubectl get pods --show-labels
+  533  vi b.yml
+  534  kubectl apply -f b.yml 
+  535  kubectl get svc
+  536  kubectl describe svc amit-clusterip
+  537  cp b.yml c.yml
+  538  vi b.yml
+  539  kubectl apply -f b.yml 
+  540  kubectl get svc
+  541  kubectl get nodes -o wide
+  542  cp c.yml d.yml
+  543  vi d.yml 
+  544  kubectl apply -f d.yml 
+  545  kubectl get svc
+  546  cat b.yml 
+  547  kubectl get pods
+  548  clear
+  549  vi f.yml
+  550  kubectl apply -f f.yml 
+  551  cat f.yml 
+  552  kubectl exec random cat /opt/num.out
+  553  kubectl exec random -- cat /opt/num.out
+  554  kubectl delete pod random
+  555  kubectl apply -f f.yml 
+  556  kubectl exec random -- cat /opt/num.out
+  557  cp f.yml g.yml
+  558  kubectl delete pod random
+  559  vi g.yml 
+  560  kubectl apply -f g.yml 
+  561  kubectl exec random -- cat /opt/num.out
+  562  kubectl delete pod random
+  563  kubectl apply -f g.yml 
+  564  kubectl exec random -- cat /opt/num.out
+  565  kubectl get secrets
+  566  kubectl create secret generic mysql-root-password --from-literal amit=mysqlpassword
+  567  kubectl get secret
+  568  kubectl get secret -o yaml mysql-root-password
+  569  vi key.yml
+  570  kubectl apply -f key.yml 
+  571  vi key.yml
+  572  kubectl apply -f key.yml 
+  573  kubectl get pods
+  574  kubectl get secret -o yaml mysql-root-password
