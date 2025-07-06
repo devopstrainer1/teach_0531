@@ -1,0 +1,92 @@
+cat a.yml 
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: abc123
+  namespace: default
+  labels:
+    app: nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: amit
+          image: nginx
+          ports:
+            - containerPort: 80
+kushagra2agarwal@cloudshell:/tmp (concrete-bloom-206520)$ cat clusterip.yml 
+apiVersion: v1
+kind: Service
+metadata:
+  name: amit-clusterip
+spec:
+  selector:
+    app: nginx
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: ClusterIP
+kushagra2agarwal@cloudshell:/tmp (concrete-bloom-206520)$ cat nodeport.yml 
+apiVersion: v1
+kind: Service
+metadata:
+  name: amit-nodeport
+spec:
+  selector:
+    app: nginx
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: NodePort
+kushagra2agarwal@cloudshell:/tmp (concrete-bloom-206520)$ cat loadbalancer.yml 
+apiVersion: v1
+kind: Service
+metadata:
+  name: amit-lb
+spec:
+  selector:
+    app: nginx
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: LoadBalancer
+kushagra2agarwal@cloudshell:/tmp (concrete-bloom-206520)$ cat random.yml 
+apiVersion: v1
+kind: Pod
+metadata:
+  name: random
+spec:
+  containers:
+    - image: alpine
+      name: alpine
+      command: ["/bin/sh", "-c"]
+      args: ["shuf -i 0-50 -n 1 >> /opt/num.out; sleep 200;"]
+kushagra2agarwal@cloudshell:/tmp (concrete-bloom-206520)$ cat randomvol.yml                                   
+apiVersion: v1
+kind: Pod
+metadata:
+  name: random
+spec:
+  containers:
+    - image: alpine
+      name: alpine
+      command: ["/bin/sh", "-c"]
+      args: ["shuf -i 0-50 -n 1 >> /opt/num.out; sleep 200;"]
+      volumeMounts:
+        - name: external-vol
+          mountPath: /opt
+  volumes:
+    - name: external-vol
+      hostPath:
+        path: /tmp
+        type: Directory
