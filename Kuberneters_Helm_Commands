@@ -1,0 +1,84 @@
+helm repo add bitnami https://charts.bitnami.com/bitnami
+  508  helm search repo bitnami
+  509  cd /tmp
+  510  ls -lrt
+  511  helm pull bitnami/nginx
+  512  ls -lrt
+  513  helm pull --untar bitnami/nginx
+  514  ls -lrt
+  515  cd nginx
+  516  ls
+  517  cat Chart.yaml 
+  518  ls
+  519  cd templates/
+  520  ls
+  521  vi deployment.yaml 
+  522  cd ..
+  523  ls
+  524  vi values.yaml 
+  525  vi a.yml
+  526  cp a.yml ../
+  527  ls
+  528  rm -rf a.yml 
+  529  cd ..
+  530  ls -lrt
+  531  helm install raj bitnami/nginx -f a.yml --dry-run
+  532  cd nginx/
+  533  ls
+  534  vi values.
+  535  vi values.yaml 
+  536  cd ..
+  537  vi a.yml 
+  538  helm install raj bitnami/nginx -f a.yml --dry-run
+  539  helm install raj bitnami/nginx -f a.yml
+  540  kubectl get all
+  541  helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+  542  helm repo search
+  543  helm repo list
+  544  helm repo update
+  545  helm search prometheus
+  546  helm search repo prometheus
+  547  helm pull --untar prometheus-community/prometheus
+  548  ls -lrt
+  549  cd prometheus/
+  550  ls
+  551  vi Chart.yaml 
+  552  cd templates/
+  553  ls
+  554  vi service.yaml 
+  555  cd ..
+  556  ls
+  557  vi values.yaml 
+  558  cd ..
+  559  vi amit.yaml
+  560  helm install prom prometheus-community/prometheus -f amit.yaml --dry-run
+  561  helm install prom prometheus-community/prometheus -f amit.yaml
+  562  cat amit.yaml 
+  563  kubectl get all
+  564  kubectl get nodes
+  565  kubectl get all
+  566  helm repo add grafana https://grafana.github.io/helm-charts
+  567  helm repo list
+  568  helm search repo grafana
+  569  helm pull --untar grafana/grafana
+  570  ls
+  571  ls -lrt
+  572  cd grafana/
+  573  ls
+  574  cd templates/
+  575  ls
+  576  vi service.yaml 
+  577  cd ..
+  578  vi values.yaml 
+  579  cd ..
+  580  vi b.yml
+  581  helm install grafana/grafana -f b.yml --dry-run
+  582  helm install graf grafana/grafana -f b.yml --dry-run
+  583  helm install graf grafana/grafana -f b.yml
+  584  kubectl get all
+  585  kubectl get secret
+  586  kubectl get secret -o yaml graf-grafana
+  587  echp YWRtaW4= | base64 --decode
+  588  echo YWRtaW4= | base64 --decode
+  589  echo OHBsQ1FyT3dXSTY3YllGODhpTFJpUmVpUTNxVlBzNEVNRDNmTmF4MQ== | base64 --decode
+  590  docker run -d --name=grafana -p 3000:3000 grafana/grafana
